@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Image Gallery</h1>
+    <ul id="imageList"></ul>
+
+    <script>
+        const user = 'tin-studio';  // Your GitHub username
+        const repo = 'tin-studio.github.io'; // Your GitHub repository name
+        const branch = 'main';      // Your branch name
+        const folder = 'image';    // Folder where your images are stored
+
+        // Fetch images from the GitHub repository
+        fetch(`https://api.github.com/repos/${user}/${repo}/contents/${folder}`)
+            .then(response => response.json())
+            .then(data => {
+                const imageList = document.getElementById('imageList');
+                data.forEach(file => {
+                    if (file.name.endsWith('.jpg') || file.name.endsWith('.png')) { // Adjust as needed
+                        const li = document.createElement('li');
+                        li.innerHTML = `<h2>${file.name}</h2><img src="${file.download_url}" alt="${file.name}">`;
+                        imageList.appendChild(li);
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching images:', error));
+    </script>
+
+</body>
+</html>
