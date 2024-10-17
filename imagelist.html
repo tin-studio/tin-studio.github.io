@@ -38,7 +38,7 @@
             .then(data => {
                 const imageList = document.getElementById('imageList');
                 data.forEach(file => {
-                    if (file.name.endsWith('.jpg') || file.name.endsWith('.png')) { // Adjust as needed
+                    if (file.name.endsWith('.jpg') || file.name.endsWith('.png') || file.name.endsWith('.jpeg') { // Adjust as needed
                         const li = document.createElement('li');
                         li.innerHTML = `<div><h2>${file.name}</h2><img src="${file.download_url}" alt="${file.name}"></div>`;
                         imageList.appendChild(li);
