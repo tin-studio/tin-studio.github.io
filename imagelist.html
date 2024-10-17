@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Image Gallery</title>
+    <title>Galeri Fotografi</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,7 +40,7 @@
                 data.forEach(file => {
                     if (file.name.endsWith('.jpg') || file.name.endsWith('.png')) { // Adjust as needed
                         const li = document.createElement('li');
-                        li.innerHTML = `<h2>${file.name}</h2><img src="${file.download_url}" alt="${file.name}">`;
+                        li.innerHTML = `<div><h2>${file.name}</h2><img src="${file.download_url}" alt="${file.name}"></div>`;
                         imageList.appendChild(li);
                     }
                 });
