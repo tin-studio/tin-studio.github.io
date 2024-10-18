@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Quality Reduction</title>
+</head>
+<body>
+    <canvas id="can"></canvas>
+    <script>
+        const canvas = document.getElementById("can");
+        const konteks = canvas.getContext("2d");
+        var img = new Image();
+        img.onload = function () {
+            canvas.height = img.height * 0.5;
+            canvas.width = img.width * 0.5;
+            konteks.drawImage(img,0,0,canvas.height,canvas.width);
+        }
+        img.src = "image/IMG_20240616_095944-01.jpeg";
+        
+    </script>
+</body>
+</html>
