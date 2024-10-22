@@ -1,17 +1,70 @@
-<html>
+<!DOCTYPE html>
+<html lang="id-ID">
  <head>
   <title>
    Fotografi
   </title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <style>
    body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
+        header{
+            position: sticky;
+            top: 0;
+            border-bottom: #9cc9ee;
+            border-bottom-width: 3px;
+            border-bottom-style: solid;
+        }
+        .main{
+            background-color: white;
+            width: 100%;
+            display: flex;
+            padding: 1px;
+            align-items: center;
+            border-bottom: black;
+            border-bottom-width: 13px;
+        }
+        .main .logo img{
+            max-width: 80px;
+            scale: 1;
+            border: #9cc9ee;
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 5px;
+        }
+        .main .title{
+            flex-direction: row;
+            flex-shrink: 1;
+            flex-grow: 1;
+        }
+        .main .title p{
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20pt;
+            margin-left: 10px;
+        }
+        .main .menu{
+            flex-direction: row;
+            background-color: #ffffff;
+            overflow: hidden;
+            display: inline-flex;
+            justify-content: flex-end;
+        }
+        .main .menu a{
+            margin: 5px;
+            padding: 10px;
+            background-color: #9cc9ee;
+            border-radius: 9px;
+            text-decoration: none;
+        }
         .hero {
-            background-image: url('image/joshua-earle-63441-unsplash.jpg');
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background-image: url('image/joshua-earle-63441-unsplash.webp');
             background-size: cover;
             background-position: center;
             color: white;
@@ -37,6 +90,7 @@
         .content {
             padding: 50px 20px;
             text-align: center;
+            border-radius: 10px;
         }
         .content .column {
             display: inline-block;
@@ -124,10 +178,27 @@
             background-color: #e4405f;
         }
   </style>
+  <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css">
+ <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
  </head>
  <body>
-  <div class="hero">
-   <h1>
+    <header>
+        <div class="main">
+                <div class="logo">
+                    <a href="https://tin-studio.github.io"><img src="assets/favicon.ico"></a>
+                </div>
+            <div class="title">
+                <p>Tin Studio</p>
+            </div>
+            <div class="menu">
+                <a href="#">Beranda</a>
+                <a href="imagelist.html">Galeri Fotografi</a>
+                <a href="About.html">Tentang Kami</a>
+            </div>
+        </div>
+    </header>
+<div class="hero">
+  <h1>
     Fotografi
    </h1>
    <p>
@@ -194,7 +265,7 @@
       Instagram
      </a>
     </div>
-    <a href="#">
+    <a href="About.html">
      Selengkapnya Tentang Kami
     </a>
    </div>
@@ -224,5 +295,8 @@
     </a>
    </div>
   </div>
+ <script type="text/javascript">
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+  </script>
  </body>
 </html>
