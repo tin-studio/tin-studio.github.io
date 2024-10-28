@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeri Fotografi</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 	<!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <style>
         body {
@@ -80,11 +80,11 @@
                 data.forEach(file => {
                     if (file.name.endsWith('.webp')) {
                         const li = document.createElement('li');
-        
-                        const imgPromise = getMeta(file.path)
+                        let urls = "/".concat(file.path);
+                        const imgPromise = getMeta(urls)
                             .then(dimensions => {
                                 li.classList.add('lis');
-                                li.innerHTML = `<div style="background-image: url(${file.path}); background-size: cover">
+                                li.innerHTML = `<div style="background-image: url(${urls}); background-size: cover">
                                     <img src="https://placehold.co/${dimensions.width}x${dimensions.height}" style="opacity: 0%;"></div>`;
                                 imageList.appendChild(li);
                             })
